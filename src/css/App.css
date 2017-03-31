@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+.navbar.navbar-inverse {
+  border-radius: 0;
+  font-family: 'Roboto Slab', serif;
+}
+.btn {
+  margin: 5px;
+}

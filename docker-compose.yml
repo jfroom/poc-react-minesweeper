@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+      - yarn_cache:/app/node_modules
+    working_dir: /app
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
+
+
+# Volume to store separate from the container runtime and host
+volumes:
+  yarn_cache:
