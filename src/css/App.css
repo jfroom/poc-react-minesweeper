@@ -1,10 +1,83 @@
-.App {
-  text-align: center;
-}
 .navbar.navbar-inverse {
   border-radius: 0;
   font-family: 'Roboto Slab', serif;
 }
+
 .btn {
   margin: 5px;
+}
+.App {
+  color: black;
+}
+.board {
+  display: block;
+  outline: 4px solid #666;
+  margin: 20px auto;
+  width: calc(8 * 32px);
+  height: calc(8 * 32px);
+  font-size: 0;
+}
+
+.tile-wrap {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+.tile, .tile-cover {
+  font-size: 22px;
+  font-weight: bold;
+  vertical-align: top;
+  cursor: default;
+
+  /* Tricky borders because want no deadspace between tiles which causes cursor to flicker between pointer/default */
+  position: relative;
+  top: -1px;
+  left: -1px;
+  border: 1px solid #666;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background: white;
+}
+.tile-cover {
+  position: absolute;
+  background-color: #ccc;
+  opacity: .5;
+}
+
+/* CSS glitch when empty div - so give it a space character */
+.tile:empty:after, .tile-cover:empty:after {
+  content: '\200b';
+}
+
+.tile .glyphicon {
+  display: inline-block;
+  position: relative;
+  top: 3px;
+}
+.glyphicon-fire {
+  color: orange;
+}
+
+.tile.clicked {
+  background-color: red;
+}
+
+/* TODO: SCSS would clean this up! */
+.App.is-active .tile-cover {
+  cursor: pointer;
+}
+.App:not(.is-active).is-winner .tile-cover {
+  opacity: .5;
+}
+.App:not(.is-active).is-winner .tile {
+  background-color: green;
+}
+.App:not(.is-active):not(.is-winner) .tile-cover{
+  opacity: .53
+}
+.App:not(.is-active):not(.is-winner) .tile {
+  background-color: red;
 }

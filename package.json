@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-fontawesome": "^1.5.0",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "bootstrap": "3",
