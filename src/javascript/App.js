@@ -49,12 +49,16 @@ class App extends Component {
     this.gridSize = 8;
 
     // Init state
-    this.state = {
-      tileArr: this.getNewTileArr(),
-      isActive: true,
-      isWinner: false
-    };
+    this.state = this.defaultState;
   }
+  get defaultState() {
+    return {
+      tileArr: this.getNewTileArr(),
+        isActive: true,
+      isWinner: false
+    }
+  }
+
   getNewTileArr() {
     // Create tile structure
     let tileArr =
@@ -103,11 +107,7 @@ class App extends Component {
     return this.gridSize * y + x;
   }
   handleNewGame() {
-    this.setState({
-      tileArr: this.getNewTileArr(),
-      isActive: true,
-      isWinner: false
-    });
+    this.setState(this.defaultState);
   }
   handleValidate() {
     let isWinner = true;
@@ -130,6 +130,7 @@ class App extends Component {
       this.tileChainReveal(tile.x, tile.y);
 
   }
+  // when clicking on a tile, chain reveal all non-mine siblings
   tileChainReveal(x, y) {
     // Uncover siblings
     this.tileSiblingShow(x + 1, y - 1);
@@ -141,12 +142,13 @@ class App extends Component {
     this.tileSiblingShow(x, y + 1);
     this.tileSiblingShow(x - 1, y + 1);
   }
+  // Siblings are shown
   tileSiblingShow(x, y) {
     // Exit if out of bounds
     if (x < 0 || x >= this.gridSize || y < 0 || y >= this.gridSize) return;
-    const tile = this.state.tileArr[this.getTileIdx(x, y)];
 
     // Exit if has mine or already uncovered
+    const tile = this.state.tileArr[this.getTileIdx(x, y)];
     if (tile.hasMine || !tile.isCovered) return;
 
     // Uncover
@@ -158,7 +160,6 @@ class App extends Component {
     if (tile.dist === 0)
       this.tileChainReveal(x, y);
   }
-
   render() {
     let appClassMods = '';
     if (this.state.isActive) appClassMods += ' is-active';
