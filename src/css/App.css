@@ -44,7 +44,7 @@
 .tile-cover {
   position: absolute;
   background-color: #ccc;
-  opacity: .5;
+  opacity: .95;
 }
 
 /* CSS glitch when empty div - so give it a space character */
@@ -58,7 +58,7 @@
   top: 3px;
 }
 .glyphicon-fire {
-  color: orange;
+  color: brown;
 }
 
 .tile.clicked {

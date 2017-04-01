@@ -31,10 +31,17 @@ class Board extends Component {
 
 class HUD extends Component {
   render() {
+    let validateBtn;
+    if (this.props.isGameActive)
+      validateBtn = <Button bsStyle="warning" bsSize="large" onClick={() => this.props.onClickValidate()}>Validate</Button>;
+    else if (this.props.isWinner)
+      validateBtn = <Button bsStyle="success" bsSize="large" disabled>Winner!</Button>;
+    else
+      validateBtn = <Button bsStyle="danger" bsSize="large" disabled>Loser!</Button>;
     return (
       <div className='hud'>
         <Button bsStyle="primary" bsSize="large" onClick={() => this.props.onClickNewGame()}>New Game</Button>
-        <Button bsStyle="warning" bsSize="large" onClick={() => this.props.onClickValidate()}>Validate</Button>
+        {validateBtn}
       </div>
     )
   }
@@ -58,7 +65,6 @@ class App extends Component {
       isWinner: false
     }
   }
-
   getNewTileArr() {
     // Create tile structure
     let tileArr =
@@ -106,17 +112,6 @@ class App extends Component {
   getTileIdx(x, y) {
     return this.gridSize * y + x;
   }
-  handleNewGame() {
-    this.setState(this.defaultState);
-  }
-  handleValidate() {
-    let isWinner = true;
-    for (let tile of this.state.tileArr) {
-      isWinner = tile.isCovered ? tile.hasMine : !tile.hasMine;
-      if (!isWinner) break;
-    }
-    this.setState({isActive: false, isWinner});
-  }
   handleTileClick(idx) {
     // Exit if game is over
     if (!this.state.isActive) return
@@ -127,8 +122,8 @@ class App extends Component {
     tile.isCovered = false;
     this.setState({tileArr});
     if (!tile.hasMine && tile.dist === 0)
-      this.tileChainReveal(tile.x, tile.y);
-
+      return this.tileChainReveal(tile.x, tile.y);
+    this.checkGameOver();
   }
   // when clicking on a tile, chain reveal all non-mine siblings
   tileChainReveal(x, y) {
@@ -160,6 +155,28 @@ class App extends Component {
     if (tile.dist === 0)
       this.tileChainReveal(x, y);
   }
+  handleNewGame() {
+    this.setState(this.defaultState);
+  }
+  handleValidate() {
+    // If game not over yet, means it's incomplete. Mark as lost.
+    if (!this.checkGameOver())
+      this.setState({isActive: false, isWinner: false});
+  }
+  checkGameOver() {
+    let numUncovered = 0;
+    for (let tile of this.state.tileArr) {
+      if (tile.hasMine && !tile.isCovered) {
+        this.setState({isActive: false, isWinner: false});
+        return true;
+      }
+      if (!tile.isCovered) numUncovered++;
+    }
+    if (numUncovered === this.gridSize * this.gridSize - this.numMines) {
+      this.setState({isActive: false, isWinner: true});
+      return true
+    }
+  }
   render() {
     let appClassMods = '';
     if (this.state.isActive) appClassMods += ' is-active';
@@ -178,6 +195,8 @@ class App extends Component {
           <HUD
             onClickNewGame={() => this.handleNewGame()}
             onClickValidate={() => this.handleValidate()}
+            isGameActive={this.state.isActive}
+            isWinner={this.state.isWinner}
           />
           <Board
             tileArr={this.state.tileArr}
