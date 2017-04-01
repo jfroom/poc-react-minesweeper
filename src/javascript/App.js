@@ -76,7 +76,7 @@ class App extends Component {
     let order = _.range(tileArr.length);
     _.range(this.numMines).forEach(function () {
       const idx = Math.floor(Math.random() * order.length);
-      const tileIdx = order.slice(idx, idx + 1)[0];
+      const tileIdx = order.splice(idx, 1)[0];
       tileArr[tileIdx].hasMine = true;
     });
 
