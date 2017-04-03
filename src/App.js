@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import _ from 'underscore';
 import {Navbar, Button, Glyphicon} from 'react-bootstrap';
-import '../css/App.css';
+import './App.css';
 
 class Tile extends Component {
   render() {
@@ -80,7 +80,7 @@ class App extends Component {
 
     // Randomly assign mines
     let order = _.range(tileArr.length);
-    _.range(this.numMines).forEach(function () {
+    _.range(this.numMines).forEach(() => {
       const idx = Math.floor(Math.random() * order.length);
       const tileIdx = order.splice(idx, 1)[0];
       tileArr[tileIdx].hasMine = true;
@@ -88,7 +88,7 @@ class App extends Component {
 
     // Assign distances
     const _this = this;
-    tileArr.forEach(function(tile) {
+    tileArr.forEach((tile) => {
       function distHelper(x, y) {
         const tile = tileArr[x + y * _this.gridSize]
         if (x < 0 || x >= _this.gridSize || y < 0 || y >= _this.gridSize)
@@ -123,7 +123,14 @@ class App extends Component {
     this.setState({tileArr});
     if (!tile.hasMine && tile.dist === 0)
       return this.tileChainReveal(tile.x, tile.y);
-    this.checkGameOver();
+
+    // Lost game?
+    for (let tile of this.state.tileArr) {
+      if (tile.hasMine && !tile.isCovered) {
+        this.setState({isActive: false, isWinner: false});
+        return;
+      }
+    }
   }
   // when clicking on a tile, chain reveal all non-mine siblings
   tileChainReveal(x, y) {
@@ -159,23 +166,14 @@ class App extends Component {
     this.setState(this.defaultState);
   }
   handleValidate() {
-    // If game not over yet, means it's incomplete. Mark as lost.
-    if (!this.checkGameOver())
-      this.setState({isActive: false, isWinner: false});
-  }
-  checkGameOver() {
-    let numUncovered = 0;
-    for (let tile of this.state.tileArr) {
-      if (tile.hasMine && !tile.isCovered) {
-        this.setState({isActive: false, isWinner: false});
-        return true;
-      }
-      if (!tile.isCovered) numUncovered++;
-    }
-    if (numUncovered === this.gridSize * this.gridSize - this.numMines) {
-      this.setState({isActive: false, isWinner: true});
-      return true
-    }
+    // Number of uncovered tiles (without mines) should match (AllTiles - NumberOfMines)
+    let numUncoveredWithoutMine = 0;
+    let isWinner = false;
+    this.state.tileArr.forEach(tile => {
+      if (!tile.isCovered && !tile.hasMine) numUncoveredWithoutMine++;
+    });
+    if (numUncoveredWithoutMine === this.gridSize * this.gridSize - this.numMines) isWinner = true;
+    this.setState({isActive: false, isWinner: isWinner});
   }
   render() {
     let appClassMods = '';
