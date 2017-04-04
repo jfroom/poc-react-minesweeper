@@ -1,5 +1,6 @@
 FROM node:7.8-slim
 
+# Install yarn
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 RUN export PATH="$PATH:`yarn global bin`"
 
