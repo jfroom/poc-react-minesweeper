@@ -1,6 +1,6 @@
 # POC-React-Minesweeper [![Build Status](https://travis-ci.org/jfroom/poc-react-minesweeper.svg?branch=master)](https://travis-ci.org/jfroom/poc-react-minesweeper)
 
-React Minesweeper proof-of-concept.
+React Minesweeper proof-of-concept project. Built mainly to get familiar with the React framework & ecosystem.
 
 Demo: https://jfroom.github.io/poc-angular-minesweeper
 
