@@ -21,13 +21,15 @@
     "jest-enzyme": "^2.0.0",
     "react-addons-test-utils": "^15.4.2",
     "react-bootstrap": "^0.30.8",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "serve": "^5.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/.bin/esw ./src --color -w"
+    "lint": "./node_modules/.bin/esw ./src --color -w",
+    "serve-build": "./node_modules/.bin/serve -s build"
   }
 }
