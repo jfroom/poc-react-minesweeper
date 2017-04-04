@@ -1,15 +1,16 @@
-# POC-React-Minesweeper
+# POC-React-Minesweeper [![Build Status](https://travis-ci.org/jfroom/poc-react-minesweeper.svg?branch=master)](https://travis-ci.org/jfroom/poc-react-minesweeper)
 
 Minesweeper proof of concept using [React](https://facebook.github.io/react/).
 
 ## Technologies
-- [React](https://facebook.github.io/react) with [ES6](https://github.com/lukehoban/es6features) & JSX
+- [React](https://facebook.github.io/react) with [ES6](https://github.com/lukehoban/es6features) & [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html)
 - [Docker](https://docs.docker.com/) with [Compose](https://docs.docker.com/compose/)
 - Scaffolded with [Create React App](https://github.com/facebookincubator/create-react-app) which leverages [Babel](https://babeljs.io/) and [webpack](https://webpack.js.org)
 - [ESLint](http://eslint.org/) with [watch](https://github.com/rizowski/eslint-watch)
 - Testing with [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/)
 - [Yarn](https://yarnpkg.com)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
+- TravisCI integration with auto-deploy to GitHub pages
 
 # Getting Started
 
