@@ -4,8 +4,8 @@ Minesweeper proof of concept using [React](https://facebook.github.io/react/).
 
 ## Technologies
 - [React](https://facebook.github.io/react) with [ES6](https://github.com/lukehoban/es6features) & JSX
-- Docker Compose
-- Scaffolded with [Create React App](https://github.com/facebookincubator/create-react-app) which leverages [Babel](https://babeljs.io/) & [webpack](https://webpack.js.org)
+- [Docker](https://docs.docker.com/) with [Compose](https://docs.docker.com/compose/)
+- Scaffolded with [Create React App](https://github.com/facebookincubator/create-react-app) which leverages [Babel](https://babeljs.io/) and [webpack](https://webpack.js.org)
 - [ESLint](http://eslint.org/) with [watch](https://github.com/rizowski/eslint-watch)
 - Testing with [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/)
 - [Yarn](https://yarnpkg.com)
