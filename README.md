@@ -32,7 +32,7 @@ Minesweeper proof of concept using [React](https://facebook.github.io/react/).
 
 `docker-compose exec web yarn lint` Run linter, stays open with watch.
 
-## Deploy
+## Build
 `docker-compose exec web yarn build` Create production build of static files.
 
 `docker-compose exec web yarn serve-build` Serve the build locally to test.
