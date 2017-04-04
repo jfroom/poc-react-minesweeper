@@ -1,19 +1,6 @@
 exports[`App Component Renders, loses, resets, wins 1`] = `
 <div>
-  <Uncontrolled(Navbar)
-    bsStyle="inverse">
-    <div
-      className="container">
-      <div
-        className="navbar-header">
-        <a
-          className="navbar-brand"
-          href="#">
-          Minesweeper
-        </a>
-      </div>
-    </div>
-  </Uncontrolled(Navbar)>
+  <Header />
   <div
     className="App container text-center  is-active">
     <HUD

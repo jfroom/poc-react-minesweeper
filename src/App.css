@@ -2,7 +2,13 @@
   border-radius: 0;
   font-family: 'Roboto Slab', serif;
 }
-
+.navbar-header {
+  float: left;
+}
+.navbar-right {
+  float: right;
+  margin-right: -15px;
+}
 .btn {
   margin: 5px;
 }

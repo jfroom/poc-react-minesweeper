@@ -77,6 +77,24 @@ HUD.propTypes = {
   onClickNewGame: React.PropTypes.func.isRequired
 };
 
+// HEADER
+function Header() {
+  return (
+    <Navbar bsStyle='inverse'>
+      <div className="container">
+        <div className="navbar-header">
+          <a className="navbar-brand" href="#">Minesweeper</a>
+        </div>
+        <ul className="nav navbar-nav navbar-right">
+          <li>
+            <a href="https://github.com/jfroom/poc-react-minesweeper"><small>Source</small></a>
+          </li>
+        </ul>
+      </div>
+    </Navbar>
+  );
+}
+
 // APP
 export class App extends Component {
   constructor(props) {
@@ -213,14 +231,7 @@ export class App extends Component {
     if (this.state.isWinner) appClassMods += ' is-winner';
     return (
       <div>
-        <Navbar bsStyle='inverse'>
-          <div className="container">
-            <div className="navbar-header">
-              <a className="navbar-brand" href="#">Minesweeper</a>
-            </div>
-          </div>
-        </Navbar>
-
+        <Header />
         <div className={"App container text-center " + appClassMods}>
           <HUD
             onClickNewGame={() => this.handleNewGame()}
