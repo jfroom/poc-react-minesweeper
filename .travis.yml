@@ -1,4 +1,6 @@
 language: node_js
+node_js:
+  - "7"
 
 services:
   - docker
@@ -28,17 +30,18 @@ before_install:
 
 install:
   - docker-compose build
+  - docker-compose run --rm --no-deps web echo 'Dependencies now installed.'
+  - # Use 'run ...` instead of 'exec ...` so that entrypoint's customized bundle install runs completely.
 
 before_script:
-  - docker-compose run --rm --no-deps web echo 'Libs now pre-installed.'
-  - # Use 'run ...` instead of 'exec ...` so that entrypoint's customized bundle install runs completely.
   - docker-compose up -d
   - # The detached `up` also runs entrypoint — but because it's detached,
   - # bundle install doesn't finish before shell moves on to next commands.
   - docker ps
 
 script:
-  - docker-compose exec web yarn test
+  - docker-compose run -e CI=true web yarn test
+  - docker-compose exec web yarn build
 
 after_script:
   - docker-compose down
