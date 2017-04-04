@@ -1,0 +1,1073 @@
+exports[`App Component Renders, loses, resets, wins 1`] = `
+<div>
+  <Uncontrolled(Navbar)
+    bsStyle="inverse">
+    <div
+      className="container">
+      <div
+        className="navbar-header">
+        <a
+          className="navbar-brand"
+          href="#">
+          Minesweeper
+        </a>
+      </div>
+    </div>
+  </Uncontrolled(Navbar)>
+  <div
+    className="App container text-center  is-active">
+    <HUD
+      isGameActive={true}
+      isWinner={false}
+      onClickNewGame={[Function]}
+      onClickValidate={[Function]} />
+    <Board
+      onClickTile={[Function]}
+      tiles={
+        Array [
+          Object {
+            "dist": 0,
+            "hasMine": true,
+            "isCovered": true,
+            "x": 0,
+            "y": 0,
+          },
+          Object {
+            "dist": 2,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 1,
+            "y": 0,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 2,
+            "y": 0,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 3,
+            "y": 0,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 4,
+            "y": 0,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": true,
+            "isCovered": true,
+            "x": 5,
+            "y": 0,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": true,
+            "isCovered": true,
+            "x": 6,
+            "y": 0,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 7,
+            "y": 0,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": true,
+            "isCovered": true,
+            "x": 0,
+            "y": 1,
+          },
+          Object {
+            "dist": 2,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 1,
+            "y": 1,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 2,
+            "y": 1,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 3,
+            "y": 1,
+          },
+          Object {
+            "dist": 3,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 4,
+            "y": 1,
+          },
+          Object {
+            "dist": 4,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 5,
+            "y": 1,
+          },
+          Object {
+            "dist": 3,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 6,
+            "y": 1,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 7,
+            "y": 1,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 0,
+            "y": 2,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 1,
+            "y": 2,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 2,
+            "y": 2,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 3,
+            "y": 2,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": true,
+            "isCovered": true,
+            "x": 4,
+            "y": 2,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": true,
+            "isCovered": true,
+            "x": 5,
+            "y": 2,
+          },
+          Object {
+            "dist": 2,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 6,
+            "y": 2,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 7,
+            "y": 2,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 0,
+            "y": 3,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 1,
+            "y": 3,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 2,
+            "y": 3,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 3,
+            "y": 3,
+          },
+          Object {
+            "dist": 2,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 4,
+            "y": 3,
+          },
+          Object {
+            "dist": 3,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 5,
+            "y": 3,
+          },
+          Object {
+            "dist": 3,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 6,
+            "y": 3,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": true,
+            "isCovered": true,
+            "x": 7,
+            "y": 3,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 0,
+            "y": 4,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 1,
+            "y": 4,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 2,
+            "y": 4,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 3,
+            "y": 4,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 4,
+            "y": 4,
+          },
+          Object {
+            "dist": 2,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 5,
+            "y": 4,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": true,
+            "isCovered": true,
+            "x": 6,
+            "y": 4,
+          },
+          Object {
+            "dist": 2,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 7,
+            "y": 4,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 0,
+            "y": 5,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 1,
+            "y": 5,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 2,
+            "y": 5,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 3,
+            "y": 5,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 4,
+            "y": 5,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": true,
+            "isCovered": true,
+            "x": 5,
+            "y": 5,
+          },
+          Object {
+            "dist": 3,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 6,
+            "y": 5,
+          },
+          Object {
+            "dist": 2,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 7,
+            "y": 5,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 0,
+            "y": 6,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 1,
+            "y": 6,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 2,
+            "y": 6,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 3,
+            "y": 6,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 4,
+            "y": 6,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 5,
+            "y": 6,
+          },
+          Object {
+            "dist": 2,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 6,
+            "y": 6,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": true,
+            "isCovered": true,
+            "x": 7,
+            "y": 6,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 0,
+            "y": 7,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 1,
+            "y": 7,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 2,
+            "y": 7,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 3,
+            "y": 7,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 4,
+            "y": 7,
+          },
+          Object {
+            "dist": 0,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 5,
+            "y": 7,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 6,
+            "y": 7,
+          },
+          Object {
+            "dist": 1,
+            "hasMine": false,
+            "isCovered": true,
+            "x": 7,
+            "y": 7,
+          },
+        ]
+      } />
+  </div>
+</div>
+`;
+
+exports[`App Component Renders, loses, resets, wins 2`] = `
+Object {
+  "onClickTile": [Function],
+  "tiles": Array [
+    Object {
+      "dist": 0,
+      "hasMine": true,
+      "isCovered": false,
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "dist": 2,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 2,
+      "y": 0,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 3,
+      "y": 0,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 4,
+      "y": 0,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": true,
+      "isCovered": true,
+      "x": 5,
+      "y": 0,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": true,
+      "isCovered": true,
+      "x": 6,
+      "y": 0,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 7,
+      "y": 0,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": true,
+      "isCovered": true,
+      "x": 0,
+      "y": 1,
+    },
+    Object {
+      "dist": 2,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 1,
+      "y": 1,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 2,
+      "y": 1,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 3,
+      "y": 1,
+    },
+    Object {
+      "dist": 3,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 4,
+      "y": 1,
+    },
+    Object {
+      "dist": 4,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 5,
+      "y": 1,
+    },
+    Object {
+      "dist": 3,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 6,
+      "y": 1,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 7,
+      "y": 1,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 0,
+      "y": 2,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 1,
+      "y": 2,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 2,
+      "y": 2,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 3,
+      "y": 2,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": true,
+      "isCovered": true,
+      "x": 4,
+      "y": 2,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": true,
+      "isCovered": true,
+      "x": 5,
+      "y": 2,
+    },
+    Object {
+      "dist": 2,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 6,
+      "y": 2,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 7,
+      "y": 2,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 0,
+      "y": 3,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 1,
+      "y": 3,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 2,
+      "y": 3,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 3,
+      "y": 3,
+    },
+    Object {
+      "dist": 2,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 4,
+      "y": 3,
+    },
+    Object {
+      "dist": 3,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 5,
+      "y": 3,
+    },
+    Object {
+      "dist": 3,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 6,
+      "y": 3,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": true,
+      "isCovered": true,
+      "x": 7,
+      "y": 3,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 0,
+      "y": 4,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 1,
+      "y": 4,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 2,
+      "y": 4,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 3,
+      "y": 4,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 4,
+      "y": 4,
+    },
+    Object {
+      "dist": 2,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 5,
+      "y": 4,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": true,
+      "isCovered": true,
+      "x": 6,
+      "y": 4,
+    },
+    Object {
+      "dist": 2,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 7,
+      "y": 4,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 0,
+      "y": 5,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 1,
+      "y": 5,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 2,
+      "y": 5,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 3,
+      "y": 5,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 4,
+      "y": 5,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": true,
+      "isCovered": true,
+      "x": 5,
+      "y": 5,
+    },
+    Object {
+      "dist": 3,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 6,
+      "y": 5,
+    },
+    Object {
+      "dist": 2,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 7,
+      "y": 5,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 0,
+      "y": 6,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 1,
+      "y": 6,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 2,
+      "y": 6,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 3,
+      "y": 6,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 4,
+      "y": 6,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 5,
+      "y": 6,
+    },
+    Object {
+      "dist": 2,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 6,
+      "y": 6,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": true,
+      "isCovered": true,
+      "x": 7,
+      "y": 6,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 0,
+      "y": 7,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 1,
+      "y": 7,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 2,
+      "y": 7,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 3,
+      "y": 7,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 4,
+      "y": 7,
+    },
+    Object {
+      "dist": 0,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 5,
+      "y": 7,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 6,
+      "y": 7,
+    },
+    Object {
+      "dist": 1,
+      "hasMine": false,
+      "isCovered": true,
+      "x": 7,
+      "y": 7,
+    },
+  ],
+}
+`;
+
+exports[`Board Component Board renders & handles tile clicks 1`] = `
+<div
+  className="board">
+  <Tile
+    dist={0}
+    isCovered={true}
+    onClick={[Function]} />
+  <Tile
+    dist={1}
+    isCovered={true}
+    onClick={[Function]} />
+  <Tile
+    dist={0}
+    isCovered={false}
+    onClick={[Function]} />
+  <Tile
+    dist={2}
+    isCovered={false}
+    onClick={[Function]} />
+</div>
+`;
+
+exports[`HUD Component Game Active 1`] = `
+<div
+  className="hud">
+  <Button
+    active={false}
+    block={false}
+    bsClass="btn"
+    bsSize="large"
+    bsStyle="primary"
+    disabled={false}
+    id="newgame"
+    onClick={[Function]}>
+    New Game
+  </Button>
+  <Button
+    active={false}
+    block={false}
+    bsClass="btn"
+    bsSize="large"
+    bsStyle="warning"
+    disabled={false}
+    id="validate"
+    onClick={[Function]}>
+    Validate
+  </Button>
+</div>
+`;
+
+exports[`HUD Component Game over with loser 1`] = `
+<div
+  className="hud">
+  <Button
+    active={false}
+    block={false}
+    bsClass="btn"
+    bsSize="large"
+    bsStyle="primary"
+    disabled={false}
+    id="newgame"
+    onClick={[Function]}>
+    New Game
+  </Button>
+  <Button
+    active={false}
+    block={false}
+    bsClass="btn"
+    bsSize="large"
+    bsStyle="danger"
+    disabled={true}
+    id="result">
+    Loser!
+  </Button>
+</div>
+`;
+
+exports[`HUD Component Game over with winner 1`] = `
+<div
+  className="hud">
+  <Button
+    active={false}
+    block={false}
+    bsClass="btn"
+    bsSize="large"
+    bsStyle="primary"
+    disabled={false}
+    id="newgame"
+    onClick={[Function]}>
+    New Game
+  </Button>
+  <Button
+    active={false}
+    block={false}
+    bsClass="btn"
+    bsSize="large"
+    bsStyle="success"
+    disabled={true}
+    id="result">
+    Winner!
+  </Button>
+</div>
+`;
+
+exports[`Tile Component covered with content & click event testing 1`] = `
+<div
+  className="tile-wrap">
+  <div
+    className="tile">
+    1
+  </div>
+  <div
+    className="tile-cover"
+    onClick={[Function]} />
+</div>
+`;
+
+exports[`Tile Component empty & no cover 1`] = `
+<div
+  className="tile-wrap">
+  <div
+    className="tile" />
+</div>
+`;
+
+exports[`Tile Component snapshot Tile, with mine 1`] = `
+<div
+  className="tile-wrap">
+  <div
+    className="tile">
+    <Glyphicon
+      bsClass="glyphicon"
+      glyph="fire" />
+  </div>
+</div>
+`;
