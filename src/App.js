@@ -14,7 +14,7 @@ export class Tile extends Component {
         <div className="tile">{content}</div>
         {this.props.isCovered && <div className="tile-cover" onClick={() => this.props.onClick()}/>}
       </div>
-    )
+    );
   }
 }
 Tile.propTypes = {
@@ -38,7 +38,7 @@ export class Board extends Component {
     );
     return (
       <div className='board'>{tiles}</div>
-    )
+    );
   }
 }
 Board.propTypes = {
@@ -67,7 +67,7 @@ export class HUD extends Component {
         <Button id='newgame' bsStyle="primary" bsSize="large" onClick={() => this.props.onClickNewGame()}>New Game</Button>
         {validateBtn}
       </div>
-    )
+    );
   }
 }
 HUD.propTypes = {
@@ -108,7 +108,7 @@ export class App extends Component {
       this.props.mineIndices :
       _.shuffle(_.range(tiles.length)).slice(0, this.numMines);
     for (let idx of mineIndicies)
-      tiles[idx].hasMine = true
+      tiles[idx].hasMine = true;
 
     // Assign tile distances to siblings with mines
     const distHelper = (x, y) => {
@@ -117,7 +117,7 @@ export class App extends Component {
       if (x < 0 || x >= this.gridSize || y < 0 || y >= this.gridSize)
         return 0;
       return tile.hasMine ? 1 : 0;
-    }
+    };
     for (let tile of tiles) {
       tile.dist = 0;
       if (tile.hasMine) continue;
@@ -131,14 +131,14 @@ export class App extends Component {
       tile.dist += distHelper(tile.x + -1, tile.y + 1);
       tile.dist += distHelper(tile.x + 0, tile.y + 1);
       tile.dist += distHelper(tile.x + 1, tile.y + 1);
-    };
+    }
 
     // Finally return default state
     return {
       tiles: tiles,
       isActive: true,
       isWinner: false
-    }
+    };
   }
   // Tile event handling
   handleTileClick(idx) {
@@ -186,7 +186,7 @@ export class App extends Component {
 
     // Uncover
     let tiles = this.state.tiles.slice();
-    tiles[tileIdx].isCovered = false
+    tiles[tileIdx].isCovered = false;
     this.setState({tiles});
 
     // Recurse

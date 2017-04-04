@@ -130,7 +130,7 @@ describe ('App Component', () => {
     expect(toJson(wrap)).toMatchSnapshot();
 
     // Assert tile distances
-    const distances = wrap.find('Board').prop('tiles').map(tile => tile.dist)
+    const distances = wrap.find('Board').prop('tiles').map(tile => tile.dist);
     expect(distances).toEqual(tileDistances);
 
     // All tiles covered

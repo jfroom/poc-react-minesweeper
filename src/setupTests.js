@@ -8,6 +8,6 @@ global.render = render;
 global.mount = mount;
 
 // Fail tests on any warning
-console.error = message => {
+console.error = message => { // eslint-disable-line no-console
   throw new Error(message);
 };
