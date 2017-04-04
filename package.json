@@ -12,6 +12,12 @@
     "bootstrap": "3",
     "enzyme": "^2.8.0",
     "enzyme-to-json": "^1.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-standard": "^2.1.1",
+    "eslint-watch": "^3.0.1",
     "jest-enzyme": "^2.0.0",
     "react-addons-test-utils": "^15.4.2",
     "react-bootstrap": "^0.30.8",
@@ -21,6 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "./node_modules/.bin/esw ./src --color -w"
   }
 }
