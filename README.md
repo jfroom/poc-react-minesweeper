@@ -45,6 +45,6 @@ Demo: https://jfroom.github.io/poc-angular-minesweeper/#/
 
 `docker-compose exec web yarn serve-build` Serve the build locally.
 
-# References
+# Additional References
 - [Testing React components with Jest and Enzyme](https://hackernoon.com/testing-react-components-with-jest-and-enzyme-41d592c174f) by Artem Sapegin  
 
