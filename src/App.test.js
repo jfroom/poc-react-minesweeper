@@ -5,7 +5,7 @@ import _ from 'underscore';
 
 // TILE
 describe ('Tile Component', () => {
-  it ('empty & no cover', () => {
+  it ('empty w/ no cover', () => {
     const wrap = shallow(<Tile onClick={() => {}}/>);
     expect(toJson(wrap)).toMatchSnapshot();
 
@@ -16,7 +16,7 @@ describe ('Tile Component', () => {
     expect(wrap.find('.tile-cover')).toBeEmpty();
   });
 
-  it ('covered with content & click event testing', () => {
+  it ('content w/ cover & click event', () => {
     // Mock click handler
     const onClick = jest.fn();
 
@@ -37,7 +37,7 @@ describe ('Tile Component', () => {
     expect(onClick.mock.calls.length).toBe(1);
   });
 
-  it ('snapshot Tile, with mine', () => {
+  it ('snapshot w/ mine', () => {
     const wrap = shallow(<Tile hasMine={true} />);
     expect(toJson(wrap)).toMatchSnapshot();
 
@@ -49,7 +49,7 @@ describe ('Tile Component', () => {
 
 // BOARD
 describe ('Board Component', () => {
-  it('Board renders & handles tile clicks', () => {
+  it('renders tiles & dispatches tile click events', () => {
     const tiles = [
       {isCovered: true, dist: 0},
       {isCovered: true, dist: 1},
@@ -79,7 +79,7 @@ describe ('Board Component', () => {
 
 // HUD
 describe ('HUD Component', () => {
-  it('Game Active', () => {
+  it('renders game active state & dispatches button click events', () => {
     const onClickValidate = jest.fn();
     const onClickNewGame = jest.fn();
     const wrap = shallow(
@@ -95,13 +95,13 @@ describe ('HUD Component', () => {
     expect(onClickValidate.mock.calls.length).toBe(1);
     expect(onClickNewGame.mock.calls.length).toBe(1);
   });
-  it('Game over with winner', () => {
+  it('renders game over state w/ winner', () => {
     const wrap = shallow(
       <HUD isGameActive={false} isWinner={true} onClickValidate={() => {}} onClickNewGame={() => {}}/>
     );
     expect(toJson(wrap)).toMatchSnapshot();
   });
-  it('Game over with loser', () => {
+  it('renders game over state w/ loser', () => {
     const wrap = shallow(
       <HUD isGameActive={false} isWinner={false} onClickValidate={() => {}} onClickNewGame={() => {}}/>
     );
@@ -111,7 +111,7 @@ describe ('HUD Component', () => {
 
 // APP
 describe ('App Component', () => {
-  it('Renders, loses, resets, wins', () => {
+  it('renders new game state; then play to lose (mine click), lose (validate click), win', () => {
     const mineIndices =
       [0, 5, 6, 8, 20, 21, 31, 38, 45, 55];
     const tileDistances = [
@@ -147,22 +147,36 @@ describe ('App Component', () => {
     let hud = wrap.find('HUD');
     expect(hud).toHaveProp('isGameActive', true);
 
-    // Clicking on mine loses game
+    // Lose by clicking on mine
     wrap.simulate('clickTile');
     clickTile(mineIndices[0]);
-    hud = wrap.find('HUD');
-    expect(wrap).toHaveState('isActive', false);
-    expect(hud).toHaveProp('isGameActive', false);
-    expect(hud).toHaveProp('isWinner', false);
-    expect(wrap.find(".App")).not.toHaveClassName('is-winner');
-    expect(numTilesCovered()).toEqual({true: 63, false: 1});
-    expect(wrap.find('Board').props('tiles')).toMatchSnapshot();
 
+    function verifyLoss() {
+      hud = wrap.find('HUD');
+      expect(wrap).toHaveState('isActive', false);
+      expect(hud).toHaveProp('isGameActive', false);
+      expect(hud).toHaveProp('isWinner', false);
+      expect(wrap.find(".App")).not.toHaveClassName('is-winner');
+      expect(numTilesCovered()).toEqual({true: 63, false: 1});
+      expect(wrap.find('Board').props('tiles')).toMatchSnapshot();
+    }
+    verifyLoss();
 
     // Start new game
     wrap.find('HUD').prop('onClickNewGame')();
     expect(numTilesCovered()).toEqual({true: 64});
 
+    // Lose by validating too early
+    // Uncover one tile, then click 'validate' to lose
+    clickTile(1);
+    expect(wrap).toHaveState('isActive', true);
+    wrap.find('HUD').prop('onClickValidate')();
+    verifyLoss();
+
+    // Start new game
+    wrap.find('HUD').prop('onClickNewGame')();
+
+    // Win
     // Uncover distance of '2'
     clickTile(1);
     expect(wrap).toHaveState('isActive', true);
