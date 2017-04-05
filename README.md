@@ -1,6 +1,10 @@
 # POC-React-Minesweeper [![Build Status](https://travis-ci.org/jfroom/poc-react-minesweeper.svg?branch=master)](https://travis-ci.org/jfroom/poc-react-minesweeper)
 
-Minesweeper proof of concept using [React](https://facebook.github.io/react/).
+React Minesweeper proof-of-concept project. Built mainly to get familiar with the React framework & ecosystem.
+
+Demo: https://jfroom.github.io/poc-angular-minesweeper
+
+![Demo animated gif](https://cloud.githubusercontent.com/assets/943108/24680649/9a204558-1946-11e7-8210-f8b8e4636114.gif)
 
 ## Technologies
 - [React](https://facebook.github.io/react) with [ES6](https://github.com/lukehoban/es6features) & [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html)
@@ -28,15 +32,19 @@ Minesweeper proof of concept using [React](https://facebook.github.io/react/).
 
 `open http://localhost:3000/` Loads default page into local browser.
 
-`docker-compose exec web yarn test` Run test suite, stays open with watch.
-
 `docker-compose exec web yarn lint` Run linter, stays open with watch.
 
-## Deploy
+## Test
+`docker-compose exec web yarn test` Run test suite, stays open with watch.
+
+![Jest test results](https://cloud.githubusercontent.com/assets/943108/24680654/9c5de0e6-1946-11e7-98c3-632afd5bdff5.png)
+
+
+## Build
 `docker-compose exec web yarn build` Create production build of static files.
 
-`docker-compose exec web yarn serve-build` Serve the build locally to test.
+`docker-compose exec web yarn serve-build` Serve the build locally.
 
-# References
+# Additional References
 - [Testing React components with Jest and Enzyme](https://hackernoon.com/testing-react-components-with-jest-and-enzyme-41d592c174f) by Artem Sapegin  
 
