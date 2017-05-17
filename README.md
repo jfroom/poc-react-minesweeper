@@ -2,7 +2,7 @@
 
 React Minesweeper proof-of-concept project. Built mainly to get familiar with the React framework & ecosystem.
 
-Demo: https://jfroom.github.io/poc-angular-minesweeper
+Demo: https://jfroom.github.io/poc-react-minesweeper
 
 ![Demo animated gif](https://cloud.githubusercontent.com/assets/943108/24680649/9a204558-1946-11e7-8210-f8b8e4636114.gif)
 
